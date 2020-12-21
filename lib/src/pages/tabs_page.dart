@@ -24,8 +24,11 @@ class _CustomPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final _navigationModel = Provider.of<_ModelNavigation>(context);
+
     return PageView(
-      // physics: BouncingScrollPhysics(),
+      controller: _navigationModel.pageController,
       physics: NeverScrollableScrollPhysics(),
       children: [
         Container(
@@ -58,11 +61,16 @@ class _CustomButtonNavigationBar extends StatelessWidget {
 class _ModelNavigation with ChangeNotifier {
   int _currentPage = 0;
 
+  PageController _pageController = PageController();
+
   int get currentPage => this._currentPage;
   set setCurrentPage(int value) {
     this._currentPage = value;
+    _pageController.animateToPage(value, duration: Duration(milliseconds: 300), curve: Curves.easeOut);
     notifyListeners();
   }
+
+  PageController get pageController => this._pageController;
 }
 
 
