@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_flutter_app/src/pages/tabs_page1.dart';
+import 'package:news_flutter_app/src/pages/tabs_page2.dart';
 import 'package:provider/provider.dart';
 
 class TabsPage extends StatelessWidget {
@@ -31,12 +33,8 @@ class _CustomPageView extends StatelessWidget {
       controller: _navigationModel.pageController,
       physics: NeverScrollableScrollPhysics(),
       children: [
-        Container(
-          color: Colors.red,
-        ),
-        Container(
-          color: Colors.green,
-        ),
+        TabsPage1(),
+        TabsPage2()
       ],
     );
   }

@@ -7,7 +7,7 @@ class TabsPage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('News'),
+        title: Text('Details'),
       ),
     );
   }
