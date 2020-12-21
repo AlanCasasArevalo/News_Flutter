@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news_flutter_app/src/pages/tabs_page.dart';
+import 'package:news_flutter_app/src/pages/tabs_page1.dart';
+import 'package:news_flutter_app/src/pages/tabs_page2.dart';
+
+import 'src/themes/dark_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,16 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Pon_aqui_tu_titulo'),
-        ),
-        body: Center(
-          child: Container(
-              child: Text('Pon_aqui_tu_titulo')
-          ),
-        ),
-      ),
+      initialRoute: 'tabs_page',
+      theme: darkCustomTheme,
+      routes: {
+        TabsPage.routeName: (BuildContext context) => TabsPage(),
+        TabsPage1.routeName: (BuildContext context) => TabsPage1(),
+        TabsPage2.routeName: (BuildContext context) => TabsPage2()
+      },
     );
   }
 }
